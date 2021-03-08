@@ -24,6 +24,7 @@ void playerBase::load()
     QFile dataBase("TempDataBase.txt");
     dataBase.open(QFile::ReadOnly | QFile::Text);
     QTextStream in(&dataBase);
+    in.setCodec("UTF-8");   //setting codec to properly handle polish charactes
     while(!in.atEnd())
     {
         Player tempPlayer;
@@ -68,6 +69,7 @@ void playerBase::save()
     for(int i = 0; i < playerCount; i++)
     {
         QTextStream out(&dataBase);
+        out.setCodec("UTF-8");  //setting codec to properly handle polish charactes
         out << playerStorage.value(i).getFirstName() << "\t" << playerStorage.value(i).getLastName() <<"\t" << playerStorage.value(i).getRating() <<"\n";
     }
     //Closing the file
