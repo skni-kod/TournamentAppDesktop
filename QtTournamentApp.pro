@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     addplayerdialog.cpp \
+    edittrinfodialog.cpp \
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     addplayerdialog.h \
+    edittrinfodialog.h \
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
@@ -25,6 +27,7 @@ HEADERS += \
 
 FORMS += \
     addplayerdialog.ui \
+    edittrinfodialog.ui \
     mainwindow.ui \
     modifyplayerdialog.ui
 

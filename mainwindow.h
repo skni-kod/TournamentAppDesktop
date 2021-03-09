@@ -58,6 +58,8 @@ private slots:
 
     void on_tournamentInfoButton_3_clicked();
 
+    void on_editInfoButton_clicked();
+
 public slots:
     void on_AddPlayerDialogAccepted();
     void on_EditPlayerDialogAccepted();
