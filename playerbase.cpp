@@ -33,7 +33,11 @@ void playerBase::load()
         QList<QString> playerDataList = in.readLine().split("\t");
         tempPlayer.setFirstName(playerDataList[0]);
         tempPlayer.setLastName(playerDataList[1]);
-        tempPlayer.setRating(playerDataList[2].toShort());
+        tempPlayer.setSextoBase(playerDataList[2]);
+        tempPlayer.setRating(playerDataList[3].toShort());
+        tempPlayer.setCategories(playerDataList[4]);
+        tempPlayer.setCountry(playerDataList[5]);
+        tempPlayer.setClub(playerDataList[6]);
         playerStorage.append(tempPlayer);
         playerCount++;
     }
@@ -54,7 +58,23 @@ void playerBase::load()
         itemPlayerStorage.append(tempItem);
 
         tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getSex());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
         (*tempItem).setData(0, playerStorage.value(i).getRating());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getCategories());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getCountry());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getClub());
         itemPlayerStorage.append(tempItem);
     }
 }
@@ -70,7 +90,7 @@ void playerBase::save()
     {
         QTextStream out(&dataBase);
         out.setCodec("UTF-8");  //setting codec to properly handle polish charactes
-        out << playerStorage.value(i).getFirstName() << "\t" << playerStorage.value(i).getLastName() <<"\t" << playerStorage.value(i).getRating() <<"\n";
+        out << playerStorage.value(i).getFirstName() << "\t" << playerStorage.value(i).getLastName() << "\t" << playerStorage.value(i).getSex() << "\t" << playerStorage.value(i).getRating() << "\t" << playerStorage.value(i).getCategories() << "\t" << playerStorage.value(i).getCountry() << "\t" << playerStorage.value(i).getClub() <<"\n";
     }
     //Closing the file
     dataBase.flush();
@@ -104,7 +124,23 @@ void playerBase::add(Player player)
         itemPlayerStorage.append(tempItem);
 
         tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getSex());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
         (*tempItem).setData(0, playerStorage.value(i).getRating());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getCategories());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getCountry());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getClub());
         itemPlayerStorage.append(tempItem);
     }
 }
@@ -138,7 +174,23 @@ void playerBase::remove(int row)
         itemPlayerStorage.append(tempItem);
 
         tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getSex());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
         (*tempItem).setData(0, playerStorage.value(i).getRating());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getCategories());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getCountry());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0,playerStorage.value(i).getClub());
         itemPlayerStorage.append(tempItem);
     }
 }
@@ -148,7 +200,11 @@ void playerBase::edit(Player player, int row)
 {
     playerStorage[row].setFirstName(player.getFirstName());
     playerStorage[row].setLastName(player.getLastName());
+    playerStorage[row].setSextoBase(player.getSex());
     playerStorage[row].setRating(player.getRating());
+    playerStorage[row].setCategories(player.getCategories());
+    playerStorage[row].setCountry(player.getCountry());
+    playerStorage[row].setClub(player.getClub());
     this->sort();
 
     //clearing previous player table items
@@ -172,7 +228,23 @@ void playerBase::edit(Player player, int row)
         itemPlayerStorage.append(tempItem);
 
         tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0, playerStorage.value(i).getSex());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
         (*tempItem).setData(0, playerStorage.value(i).getRating());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0, playerStorage.value(i).getCategories());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0, playerStorage.value(i).getCountry());
+        itemPlayerStorage.append(tempItem);
+
+        tempItem = new QTableWidgetItem;
+        (*tempItem).setData(0, playerStorage.value(i).getClub());
         itemPlayerStorage.append(tempItem);
     }
 }
@@ -187,7 +259,11 @@ Player playerBase::get_player(int row)
     Player tempPlayer;
     tempPlayer.setFirstName(playerStorage.value(row).getFirstName());
     tempPlayer.setLastName(playerStorage.value(row).getLastName());
+    tempPlayer.setSextoBase(playerStorage.value(row).getSex());
     tempPlayer.setRating(playerStorage.value(row).getRating());
+    tempPlayer.setCategories(playerStorage.value(row).getCategories());
+    tempPlayer.setCountry(playerStorage.value(row).getCountry());
+    tempPlayer.setClub(playerStorage.value(row).getClub());
     return tempPlayer;
 }
 
