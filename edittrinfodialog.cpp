@@ -12,3 +12,13 @@ EditTrInfoDialog::~EditTrInfoDialog()
 {
     delete ui;
 }
+
+void EditTrInfoDialog::on_buttonBox_accepted()
+{
+    this->accept();
+}
+
+void EditTrInfoDialog::on_buttonBox_rejected()
+{
+    this->reject();
+}
