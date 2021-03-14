@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     addplayerdialog.cpp \
+    editinfoaboutdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     addplayerdialog.h \
+    editinfoaboutdialog.h \
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
@@ -25,6 +27,7 @@ HEADERS += \
 
 FORMS += \
     addplayerdialog.ui \
+    editinfoaboutdialog.ui \
     mainwindow.ui \
     modifyplayerdialog.ui
 
@@ -33,4 +36,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    Resources.qrc
