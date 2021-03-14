@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Images/CMCategoryIcon.png</file>
+        <file>Images/FMCategoryIcon.png</file>
+        <file>Images/GMCategoryIcon.png</file>
+        <file>Images/IMCategoryIcon.png</file>
+        <file>Images/WCMCategoryIcon.png</file>
+        <file>Images/WFMCategoryIcon.png</file>
+        <file>Images/WGMCategoryIcon.png</file>
+        <file>Images/WIMCategoryIcon.png</file>
+    </qresource>
+</RCC>
