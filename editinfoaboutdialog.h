@@ -15,6 +15,12 @@ public:
     explicit EditInfoAboutDialog(QWidget *parent = nullptr);
     ~EditInfoAboutDialog();
 
+private slots:
+
+    void on_saveSettingsButton_clicked();
+
+    void on_cancelSettingsButton_clicked();
+
 private:
     Ui::EditInfoAboutDialog *ui;
 };

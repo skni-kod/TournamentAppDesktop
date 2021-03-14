@@ -3,6 +3,7 @@
 #include "addplayerdialog.h"
 #include "modifyplayerdialog.h"
 #include "editinfoaboutdialog.h"
+#include "tournamentinfo.h"
 #include "playerbase.h"
 #include "QMessageBox"
 #include "QDebug"
@@ -149,7 +150,7 @@ void MainWindow::updateTableWidget()
 
 
 //this function is responsible for Edit Info button
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_editInfoAboutTButton_clicked()
 {
     //handling player addition
     EditInfoAboutDialog editAboutDialog;
@@ -239,4 +240,3 @@ void MainWindow::on_tournamentInfoButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
-

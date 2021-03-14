@@ -15,7 +15,8 @@ SOURCES += \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
     player.cpp \
-    playerbase.cpp
+    playerbase.cpp \
+    tournamentinfo.cpp
 
 HEADERS += \
     addplayerdialog.h \
@@ -23,7 +24,8 @@ HEADERS += \
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
-    playerbase.h
+    playerbase.h \
+    tournamentinfo.h
 
 FORMS += \
     addplayerdialog.ui \
