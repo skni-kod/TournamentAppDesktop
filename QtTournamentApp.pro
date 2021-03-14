@@ -10,11 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     addplayerdialog.cpp \
-<<<<<<< Updated upstream
-    edittrinfodialog.cpp \
-=======
     editinfoaboutdialog.cpp \
->>>>>>> Stashed changes
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
@@ -23,11 +19,7 @@ SOURCES += \
 
 HEADERS += \
     addplayerdialog.h \
-<<<<<<< Updated upstream
-    edittrinfodialog.h \
-=======
     editinfoaboutdialog.h \
->>>>>>> Stashed changes
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
@@ -35,11 +27,7 @@ HEADERS += \
 
 FORMS += \
     addplayerdialog.ui \
-<<<<<<< Updated upstream
-    edittrinfodialog.ui \
-=======
     editinfoaboutdialog.ui \
->>>>>>> Stashed changes
     mainwindow.ui \
     modifyplayerdialog.ui
 
