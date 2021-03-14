@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "addplayerdialog.h"
-#include "edittrinfodialog.h"
 #include "modifyplayerdialog.h"
 #include "editinfoaboutdialog.h"
 #include "playerbase.h"
@@ -19,12 +18,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tournamentInfoButton_3->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
 
     //setting up the tableWidget
-    ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->setColumnCount(7);
     //creating horizontal labels
     QStringList labels;
     labels.append("First Name");
     labels.append("Last Name");
+    labels.append("Sex");
     labels.append("Rating");
+    labels.append("Categories");
+    labels.append("Country");
+    labels.append("Club");
     ui->tableWidget->setHorizontalHeaderLabels(labels);
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);    //this disables edit of cells in the table
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);   //changing selection behavior (whole row will be selected instead of individual cells)
@@ -135,7 +138,11 @@ void MainWindow::updateTableWidget()
         ui->tableWidget->setItem(j,0,playerBase::Get().itemPlayerStorage.value(i));
         ui->tableWidget->setItem(j,1,playerBase::Get().itemPlayerStorage.value(i+1));
         ui->tableWidget->setItem(j,2,playerBase::Get().itemPlayerStorage.value(i+2));
-        i+=3;
+        ui->tableWidget->setItem(j,3,playerBase::Get().itemPlayerStorage.value(i+3));
+        ui->tableWidget->setItem(j,4,playerBase::Get().itemPlayerStorage.value(i+4));
+        ui->tableWidget->setItem(j,5,playerBase::Get().itemPlayerStorage.value(i+5));
+        ui->tableWidget->setItem(j,6,playerBase::Get().itemPlayerStorage.value(i+6));
+        i+=7;
         j++;
     }
 }
@@ -150,7 +157,6 @@ void MainWindow::on_pushButton_clicked()
         wereChangesMade = true;
 }
 
-<<<<<<< Updated upstream
 //this function is responsible for Edit Info button
 void MainWindow::on_editInfoButton_clicked()
 {
@@ -161,9 +167,6 @@ void MainWindow::on_editInfoButton_clicked()
     if(editDialog1.exec() == QDialog::Accepted)
         wereChangesMade = true;
 }
-=======
->>>>>>> Stashed changes
-
 //these functions handle movement between pages in the UI (there are 4 pages, each contain 4 button ("Player", "Game Score", "Tournament Info", "Photos"))
 void MainWindow::on_playersButton_0_clicked()
 {

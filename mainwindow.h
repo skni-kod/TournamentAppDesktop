@@ -58,11 +58,7 @@ private slots:
 
     void on_tournamentInfoButton_3_clicked();
 
-<<<<<<< Updated upstream
-    void on_editInfoButton_clicked();
-=======
     void on_pushButton_clicked();
->>>>>>> Stashed changes
 
 public slots:
     void on_AddPlayerDialogAccepted();
