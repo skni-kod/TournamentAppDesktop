@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditInfoAboutDialog</class>
+ <widget class="QDialog" name="EditInfoAboutDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>668</width>
+    <height>417</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>321</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Tournament adress</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPlainTextEdit" name="plainTextEdit"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>121</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Tournament Date</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDateTimeEdit" name="dateTimeEdit">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2021</year>
+        <month>9</month>
+        <day>14</day>
+       </datetime>
+      </property>
+      <property name="minimumDateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2021</year>
+        <month>9</month>
+        <day>14</day>
+       </datetime>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Maximum number of members:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>321</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Minimum category</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Grandmaster</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/GMCategoryIcon.png</normaloff>:/new/prefix1/Images/GMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman Grand Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WGMCategoryIcon.png</normaloff>:/new/prefix1/Images/WGMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>International Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/IMCategoryIcon.png</normaloff>:/new/prefix1/Images/IMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman International Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WIMCategoryIcon.png</normaloff>:/new/prefix1/Images/WIMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>FIDE Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/FMCategoryIcon.png</normaloff>:/new/prefix1/Images/FMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman FIDE Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WFMCategoryIcon.png</normaloff>:/new/prefix1/Images/WFMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Candidate Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/CMCategoryIcon.png</normaloff>:/new/prefix1/Images/CMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman Candidate Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WCMCategoryIcon.png</normaloff>:/new/prefix1/Images/WCMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>I Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>II Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>III Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IV Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>V Category</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>321</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Maximum category</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox_3">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Grandmaster</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/GMCategoryIcon.png</normaloff>:/new/prefix1/Images/GMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman Grand Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WGMCategoryIcon.png</normaloff>:/new/prefix1/Images/WGMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>International Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/IMCategoryIcon.png</normaloff>:/new/prefix1/Images/IMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman International Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WIMCategoryIcon.png</normaloff>:/new/prefix1/Images/WIMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>FIDE Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/FMCategoryIcon.png</normaloff>:/new/prefix1/Images/FMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman FIDE Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WFMCategoryIcon.png</normaloff>:/new/prefix1/Images/WFMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Candidate Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/CMCategoryIcon.png</normaloff>:/new/prefix1/Images/CMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Woman Candidate Master</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/new/prefix1/Images/WCMCategoryIcon.png</normaloff>:/new/prefix1/Images/WCMCategoryIcon.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>I Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>II Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>III Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IV Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>V Category</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>10</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Pairing System</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="text">
+       <string>Round Robin</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton_2">
+      <property name="text">
+       <string>????</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>70</y>
+     <width>301</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Points assignment:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Win</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Draw</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Lose</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>BYE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>419</x>
+     <y>370</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save settings</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>539</x>
+     <y>370</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel settings</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
