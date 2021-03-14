@@ -76,11 +76,6 @@ void ModifyPlayerDialog::on_modifyButton_clicked()
         message += "Country is required\n";
         isDataIncorrect = true;
     }
-    if(tempPlayer.getClub().length() == 0)
-    {
-        message += "Club is required\n";
-        isDataIncorrect = true;
-    }
     if(isDataIncorrect)
     {
         QMessageBox messageBox1 (QMessageBox::Warning, "Incorrect data", message);
