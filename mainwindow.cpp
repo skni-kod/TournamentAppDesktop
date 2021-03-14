@@ -147,6 +147,8 @@ void MainWindow::updateTableWidget()
     }
 }
 
+
+//this function is responsible for Edit Info button
 void MainWindow::on_pushButton_clicked()
 {
     //handling player addition
@@ -157,16 +159,7 @@ void MainWindow::on_pushButton_clicked()
         wereChangesMade = true;
 }
 
-//this function is responsible for Edit Info button
-void MainWindow::on_editInfoButton_clicked()
-{
-    //handling player addition
-    EditTrInfoDialog editDialog1;
-    editDialog1.setModal(true);
-    connect(&editDialog1, SIGNAL(accepted()), this, SLOT(on_editInfoButton_clicked()));
-    if(editDialog1.exec() == QDialog::Accepted)
-        wereChangesMade = true;
-}
+
 //these functions handle movement between pages in the UI (there are 4 pages, each contain 4 button ("Player", "Game Score", "Tournament Info", "Photos"))
 void MainWindow::on_playersButton_0_clicked()
 {
