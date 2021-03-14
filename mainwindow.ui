@@ -565,6 +565,7 @@
          </item>
         </layout>
        </widget>
+<<<<<<< Updated upstream
        <widget class="QWidget" name="verticalLayoutWidget">
         <property name="geometry">
          <rect>
@@ -628,11 +629,23 @@
           <x>640</x>
           <y>440</y>
           <width>131</width>
+=======
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>390</y>
+          <width>111</width>
+>>>>>>> Stashed changes
           <height>41</height>
          </rect>
         </property>
         <property name="text">
+<<<<<<< Updated upstream
          <string>Edit Info</string>
+=======
+         <string>Edit info</string>
+>>>>>>> Stashed changes
         </property>
        </widget>
       </widget>

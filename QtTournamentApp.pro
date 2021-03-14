@@ -10,7 +10,11 @@ CONFIG += c++11
 
 SOURCES += \
     addplayerdialog.cpp \
+<<<<<<< Updated upstream
     edittrinfodialog.cpp \
+=======
+    editinfoaboutdialog.cpp \
+>>>>>>> Stashed changes
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
@@ -19,7 +23,11 @@ SOURCES += \
 
 HEADERS += \
     addplayerdialog.h \
+<<<<<<< Updated upstream
     edittrinfodialog.h \
+=======
+    editinfoaboutdialog.h \
+>>>>>>> Stashed changes
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
@@ -27,7 +35,11 @@ HEADERS += \
 
 FORMS += \
     addplayerdialog.ui \
+<<<<<<< Updated upstream
     edittrinfodialog.ui \
+=======
+    editinfoaboutdialog.ui \
+>>>>>>> Stashed changes
     mainwindow.ui \
     modifyplayerdialog.ui
 
@@ -36,4 +48,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    Resources.qrc
