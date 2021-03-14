@@ -84,7 +84,7 @@ void ModifyPlayerDialog::on_modifyButton_clicked()
     if(!isDataIncorrect)
     {
         //adding player to playerStorage located in playerBase object
-        playerBase::Get().add(tempPlayer);
+        playerBase::Get().edit(tempPlayer, selectedRow);
         accept();
     }
 }

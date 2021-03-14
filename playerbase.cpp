@@ -194,7 +194,7 @@ void playerBase::remove(int row)
         itemPlayerStorage.append(tempItem);
     }
 }
-
+//In Mariusz's opinion this does work.
 //for reasons unknown this method doesn't work
 void playerBase::edit(Player player, int row)
 {
