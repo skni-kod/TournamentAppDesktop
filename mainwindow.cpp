@@ -7,6 +7,7 @@
 #include "playerbase.h"
 #include "QMessageBox"
 #include "QDebug"
+#include "QPushButton"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->photosButton_1->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
     ui->gameScoreButton_2->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
     ui->tournamentInfoButton_3->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
+    //block resize
+    this->statusBar()->setSizeGripEnabled(false);
+    setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
+
 
     //setting up the tableWidget
     ui->tableWidget->setColumnCount(7);
@@ -39,6 +44,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     //updating the tableWidget
     this->updateTableWidget();
+//gamescore
+    roundrobin=new TabWidgetRoundRobin(this);
+    ui->verticalLayout->addWidget(roundrobin);
 }
 
 MainWindow::~MainWindow()
