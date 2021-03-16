@@ -43,9 +43,9 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
     qDebug() << tmpTournament.getDrawPointsAssignment();
     tmpTournament.setByePointsAssignment(ui->byePointsAssignmentSpinBox->value());
     qDebug() << tmpTournament.getByePointsAssignment();
+    tmpTournament.setPairingSystem(ui->roundRobinRadioButton->isChecked(), ui->radioButton_2->isChecked());
 
     // TODO:
-    //      Pairing system set.
     //      Adding to file
     //      Adding validation
 }
