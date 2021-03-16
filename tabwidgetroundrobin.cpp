@@ -19,7 +19,7 @@ TabWidgetRoundRobin::~TabWidgetRoundRobin()
 
 void TabWidgetRoundRobin::geneSQL()
 {
-    const int Numbersofplayers=6;//temporary
+    const int Numbersofplayers=10;//temporary
     const QString idTurn="tabela";//temporary use static id
     db = QSqlDatabase::addDatabase("QMYSQL");
     db.setDatabaseName("qtt");
@@ -30,7 +30,7 @@ void TabWidgetRoundRobin::geneSQL()
     QSqlQuery query(db);
     query.prepare("CREATE TABLE IF NOT EXISTS "+idTurn+" (id int not null primary key, graczjeden text,graczdwa text,wynik text)");
     query.exec();
-    QList <QString> Players={"Witek","Adam","Mati","Czeslaw","Ewa","Maciek"};//temporary use of the list
+    QList <QString> Players={"Witek","Adam","Mati","Czeslaw","Ewa","Maciek","Madzia","Tymek" ,"Memento","Mori"};//temporary use of the list
     QVector<QVector<QString>> tempArray (2, QVector<QString> (Numbersofplayers/2, ""));
     if(db.isOpen())
         for(int mainloop=0,id=0;mainloop<Numbersofplayers-1;mainloop++){
@@ -62,7 +62,7 @@ void TabWidgetRoundRobin::geneSQL()
 
 void TabWidgetRoundRobin::fillingTable()
 {
-    int Numbersofplayers=6;
+    int Numbersofplayers=10;
 
 
     ;
@@ -74,7 +74,7 @@ void TabWidgetRoundRobin::fillingTable()
             sqlModelToTable.push_back(new QSqlQueryModel(this));
 
             QSqlQuery query;
-            query.prepare("SELECT `graczjeden`,`graczdwa`,`wynik` FROM `tabela` WHERE `id` BETWEEN "+QString::number(id)+" and "+QString::number(id+2)+"");
+            query.prepare("SELECT `graczjeden`,`graczdwa`,`wynik` FROM `tabela` WHERE `id` BETWEEN "+QString::number(id)+" and "+QString::number(id+(Numbersofplayers/2)-1)+"");
             query.exec();
             //qDebug()<<query.lastError().text();
             sqlModelToTable[i]->setQuery(query);
