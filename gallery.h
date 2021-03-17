@@ -9,10 +9,10 @@ class Gallery
     int thumbnailsCount;    //amount of images in the gallery
     GalleryThumbnail *thumbnails;
     QGraphicsScene *galleryScene;
-    void arrangeThumbnails();
 public:
     Gallery();
     void load();
+    void arrangeThumbnails();
     QGraphicsScene* getScene();
 };
 

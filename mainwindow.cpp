@@ -43,15 +43,10 @@ MainWindow::MainWindow(QWidget *parent)
     this->updateTableWidget();
 
     //rendering the gallery scene ("Photos" tab)
-    //right now this section causes a memory leak :D
-    GalleryThumbnail* thumbnail1 = new GalleryThumbnail;
-    thumbnail1->setThumbnailImage("1.jpg");
-    QGraphicsScene* galleryScene = new QGraphicsScene(this);
-    galleryScene->addItem(thumbnail1);
     Gallery gallery1;
     gallery1.load();
     ui->graphicsView->setScene(gallery1.getScene());
-    thumbnail1->setPos(-100,-100);
+    gallery1.arrangeThumbnails();
 }
 
 MainWindow::~MainWindow()
