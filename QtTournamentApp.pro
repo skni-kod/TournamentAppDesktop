@@ -10,24 +10,30 @@ CONFIG += c++11
 
 SOURCES += \
     addplayerdialog.cpp \
+    edgetotournamentv.cpp \
     editinfoaboutdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
     player.cpp \
     playerbase.cpp \
+    reacttotournamentv.cpp \
     tabwidgetroundrobin.cpp \
-    tournamentinfo.cpp
+    tournamentinfo.cpp \
+    tournamentview.cpp
 
 HEADERS += \
     addplayerdialog.h \
+    edgetotournamentv.h \
     editinfoaboutdialog.h \
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
     playerbase.h \
+    reacttotournamentv.h \
     tabwidgetroundrobin.h \
-    tournamentinfo.h
+    tournamentinfo.h \
+    tournamentview.h
 
 FORMS += \
     addplayerdialog.ui \

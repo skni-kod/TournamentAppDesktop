@@ -46,7 +46,10 @@ MainWindow::MainWindow(QWidget *parent)
     this->updateTableWidget();
 //gamescore
     roundrobin=new TabWidgetRoundRobin(this);
+    tournament=new TournamentView(this);
     ui->verticalLayout->addWidget(roundrobin);
+    ui->horizontalLayout_16->addWidget((tournament));
+    ui->stackedWidget_2->setCurrentIndex(1);
 }
 
 MainWindow::~MainWindow()

@@ -467,20 +467,52 @@
          </item>
         </layout>
        </widget>
-       <widget class="QFrame" name="frame">
+       <widget class="QStackedWidget" name="stackedWidget_2">
         <property name="geometry">
          <rect>
           <x>19</x>
-          <y>59</y>
+          <y>50</y>
           <width>751</width>
-          <height>431</height>
+          <height>461</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_12">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout"/>
-         </item>
-        </layout>
+        <widget class="QWidget" name="page_5">
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QFrame" name="frame">
+              <layout class="QHBoxLayout" name="horizontalLayout_12"/>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_6">
+         <widget class="QWidget" name="verticalLayoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>-10</x>
+            <y>20</y>
+            <width>761</width>
+            <height>401</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="page_4">

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <tabwidgetroundrobin.h>
+#include <tournamentview.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -70,5 +71,6 @@ private:
     Ui::MainWindow *ui;
     void updateTableWidget();   //updates the table widget with players
     QTabWidget *roundrobin;
+    TournamentView * tournament;
 };
 #endif // MAINWINDOW_H

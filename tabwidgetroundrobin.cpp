@@ -31,6 +31,7 @@ void TabWidgetRoundRobin::geneSQL()
     query.prepare("CREATE TABLE IF NOT EXISTS "+idTurn+" (id int not null primary key, graczjeden text,graczdwa text,wynik text)");
     query.exec();
     QList <QString> Players={"Witek","Adam","Mati","Czeslaw","Ewa","Maciek","Madzia","Tymek" ,"Memento","Mori"};//temporary use of the list
+    if(Players.size()%2!=0)Players.push_back("Przerwa[x]");//In the future, the size will be taken from the list[we add players if the number is not even];
     QVector<QVector<QString>> tempArray (2, QVector<QString> (Numbersofplayers/2, ""));
     if(db.isOpen())
         for(int mainloop=0,id=0;mainloop<Numbersofplayers-1;mainloop++){
