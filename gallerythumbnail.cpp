@@ -34,6 +34,11 @@ void GalleryThumbnail::setImageIndex(unsigned int index)
     imageIndex = index;
 }
 
+void GalleryThumbnail::setTotalImageCount(int value)
+{
+    totalImageCount = value;
+}
+
 int GalleryThumbnail::getThumbnailWidth()
 {
     return thumbnailImage.size().width();
@@ -44,9 +49,14 @@ int GalleryThumbnail::getThumbnailHeight()
     return thumbnailImage.size().height();
 }
 
-void GalleryThumbnail::setThumbnailPoint(qreal x, qreal y)
+void GalleryThumbnail::setThumbnailPointX(qreal x)
 {
     thumbnailPoint.setX(x);
+    update();
+}
+
+void GalleryThumbnail::setThumbnailPointY(qreal y)
+{
     thumbnailPoint.setY(y);
     update();
 }
@@ -54,6 +64,6 @@ void GalleryThumbnail::setThumbnailPoint(qreal x, qreal y)
 void GalleryThumbnail::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     QGraphicsItem::mousePressEvent(event);
-    GalleryPhotoViewer viewer1(imageIndex,fullResImagePath);
+    GalleryPhotoViewer viewer1(imageIndex, totalImageCount, fullResImagePath);
     viewer1.exec();
 }

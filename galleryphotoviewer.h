@@ -13,7 +13,7 @@ class GalleryPhotoViewer : public QDialog
     Q_OBJECT
 
 public:
-    explicit GalleryPhotoViewer(unsigned int imageIndex, QString previewImagePath,QWidget *parent = nullptr);
+    explicit GalleryPhotoViewer(unsigned int imageIndex, int totalImageCount,QString previewImagePath,QWidget *parent = nullptr);
     ~GalleryPhotoViewer();
 
 private slots:
@@ -27,6 +27,7 @@ private:
     int imageIndex;
     QPixmap *pixmapImage;
     QGraphicsScene *viewerScene;
+    int totalImageCount;
 };
 
 #endif // GALLERYPHOTOVIEWER_H

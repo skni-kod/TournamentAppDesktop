@@ -12,19 +12,27 @@ void Gallery::arrangeThumbnails()
     int witdh;
     int height;
     int xPosAdjustment;
+    int yPosAdjustment;
 
     //moving thumbnails to appropiate positions in the graphicView;
     for(int i = 0,j = 0; i < thumbnailsCount; i++)
     {
-        thumbnails[i].setPos(-515 + 245*(i%3),10 + 180*j);
-        galleryScene->addRect(-515 + 245*(i%3),10 + 180*j, 220, 165, thumbnailBorderPen);
+        thumbnails[i].setPos(-490 + 245*(i%3),10 + 180*j);
+        galleryScene->addRect(-490 + 245*(i%3),10 + 180*j, 220, 165, thumbnailBorderPen);
 
         witdh = thumbnails[i].getThumbnailWidth();
+        height = thumbnails[i].getThumbnailHeight();
         if(witdh < 220)
         {
             xPosAdjustment = (220 - witdh)/2;
-            thumbnails[i].setThumbnailPoint(xPosAdjustment,0);
+            thumbnails[i].setThumbnailPointX(xPosAdjustment);
         }
+        if(height < 165)
+        {
+            yPosAdjustment = (165 - height)/2;
+            thumbnails[i].setThumbnailPointY(yPosAdjustment);
+        }
+
 
         if(i%3 == 2)
             j++;
@@ -40,7 +48,8 @@ void Gallery::load()
     thumbnails = new GalleryThumbnail[thumbnailsCount];
     QString imagePath;
 
-    for(int i = 0; i < thumbnailsCount; i++)
+    int i = 0;
+    for(; i < thumbnailsCount; i++)
     {
         //setting paths for full scale images
         imagePath.append("Images/");
@@ -59,6 +68,7 @@ void Gallery::load()
 
         //setting image indexes
         thumbnails[i].setImageIndex(i);
+        thumbnails[i].setTotalImageCount(thumbnailsCount);
     }
 
 }
