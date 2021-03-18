@@ -15,10 +15,14 @@ public:
     void setThumbnailImage(QString path);
     void setFullResImagePath(QString path);
     void setImageIndex(unsigned int index);
+    int getThumbnailWidth();
+    int getThumbnailHeight();
+    void setThumbnailPoint(qreal x, qreal y);
 protected:
     QImage thumbnailImage;
     QString fullResImagePath;
     unsigned int imageIndex;
+    QPointF thumbnailPoint;
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 };
 

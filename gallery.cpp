@@ -3,12 +3,31 @@
 
 void Gallery::arrangeThumbnails()
 {
+    //creating a pen for generating the thumbnail border
+    QPen thumbnailBorderPen;
+    thumbnailBorderPen.setColor(Qt::black);
+    thumbnailBorderPen.setWidth(1);
+
+    //variables for storing thumbnail width and height
+    int witdh;
+    int height;
+    int xPosAdjustment;
+
+    //moving thumbnails to appropiate positions in the graphicView;
     for(int i = 0,j = 0; i < thumbnailsCount; i++)
     {
-        thumbnails[i].setPos(-530 + 210*(i%3),10 + 120*j);
+        thumbnails[i].setPos(-515 + 245*(i%3),10 + 180*j);
+        galleryScene->addRect(-515 + 245*(i%3),10 + 180*j, 220, 165, thumbnailBorderPen);
+
+        witdh = thumbnails[i].getThumbnailWidth();
+        if(witdh < 220)
+        {
+            xPosAdjustment = (220 - witdh)/2;
+            thumbnails[i].setThumbnailPoint(xPosAdjustment,0);
+        }
+
         if(i%3 == 2)
             j++;
-        qDebug() << thumbnails[i].pos();
     }
 }
 
