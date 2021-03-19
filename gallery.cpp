@@ -1,6 +1,12 @@
 #include "gallery.h"
 #include "QDebug"
 
+Gallery::Gallery(){}
+
+Gallery::~Gallery()
+{
+    delete[] thumbnails;
+}
 void Gallery::arrangeThumbnails()
 {
     //creating a pen for generating the thumbnail border
@@ -38,8 +44,6 @@ void Gallery::arrangeThumbnails()
             j++;
     }
 }
-
-Gallery::Gallery(){}
 
 void Gallery::load()
 {

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "gallery.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -65,6 +66,7 @@ public slots:
     void on_EditPlayerDialogAccepted();
 
 private:
+    Gallery gallery1;
     bool wereChangesMade = false; //changes value to true if data modifications took place (player added, edited, removed etc.)
     Ui::MainWindow *ui;
     void updateTableWidget();   //updates the table widget with players

@@ -8,7 +8,6 @@
 #include "QMessageBox"
 #include "QDebug"
 #include "gallerythumbnail.h"
-#include "gallery.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -43,7 +42,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->updateTableWidget();
 
     //rendering the gallery scene ("Photos" tab)
-    Gallery gallery1;
     gallery1.load();
     ui->graphicsView->setScene(gallery1.getScene());
     gallery1.arrangeThumbnails();

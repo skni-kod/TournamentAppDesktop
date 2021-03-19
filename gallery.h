@@ -10,6 +10,7 @@ class Gallery
     GalleryThumbnail *thumbnails;
     QGraphicsScene *galleryScene;
 public:
+    ~Gallery();
     Gallery();
     void load();
     void arrangeThumbnails();
