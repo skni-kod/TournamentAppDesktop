@@ -21,13 +21,18 @@ private slots:
 
     void on_previousButton_clicked();
 
+    void on_zoomButton_clicked();
+
 private:
     Ui::GalleryPhotoViewer *ui;
-    QString previewImagePath;
-    int imageIndex;
+    QString previewImagePath; //path to the currently displayed image
+    int imageIndex; //displayed image index
+    QImage fullResImage; //full resolution copy of the displayed image
+    QImage lowResImage; //720p copy of the displayed image (default displayed image size)
     QPixmap *pixmapImage;
+    bool isZoomEnabled = false; //zoom flag
     QGraphicsScene *viewerScene;
-    int totalImageCount;
+    int totalImageCount; //total amount of images in gallery
 };
 
 #endif // GALLERYPHOTOVIEWER_H

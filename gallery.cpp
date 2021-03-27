@@ -48,7 +48,7 @@ void Gallery::arrangeThumbnails()
 void Gallery::load()
 {
     galleryScene = new QGraphicsScene;
-    thumbnailsCount = 10;
+    thumbnailsCount = 11;
     thumbnails = new GalleryThumbnail[thumbnailsCount];
     QString imagePath;
 
