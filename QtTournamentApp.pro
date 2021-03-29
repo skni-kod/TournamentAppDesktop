@@ -11,6 +11,9 @@ CONFIG += c++11
 SOURCES += \
     addplayerdialog.cpp \
     editinfoaboutdialog.cpp \
+    gallery.cpp \
+    galleryphotoviewer.cpp \
+    gallerythumbnail.cpp \
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
@@ -22,6 +25,9 @@ SOURCES += \
 HEADERS += \
     addplayerdialog.h \
     editinfoaboutdialog.h \
+    gallery.h \
+    galleryphotoviewer.h \
+    gallerythumbnail.h \
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
@@ -32,6 +38,7 @@ HEADERS += \
 FORMS += \
     addplayerdialog.ui \
     editinfoaboutdialog.ui \
+    galleryphotoviewer.ui \
     mainwindow.ui \
     modifyplayerdialog.ui \
     tabwidgetroundrobin.ui

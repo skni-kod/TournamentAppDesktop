@@ -7,6 +7,7 @@
 #include "playerbase.h"
 #include "QMessageBox"
 #include "QDebug"
+#include "gallerythumbnail.h"
 #include "QPushButton"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -44,7 +45,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     //updating the tableWidget
     this->updateTableWidget();
-//gamescore
+
+    //rendering the gallery scene ("Photos" tab)
+    gallery1.load();
+    ui->graphicsView->setScene(gallery1.getScene());
+    gallery1.arrangeThumbnails();
     roundrobin=new TabWidgetRoundRobin(this);
     ui->verticalLayout->addWidget(roundrobin);
 }
