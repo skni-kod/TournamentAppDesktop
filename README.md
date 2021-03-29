@@ -1,7 +1,7 @@
 # Chess Tournament Application
 
 ## Opis projektu
-Aplikacja stworzona z myślą o turniejach szachowych. Ma ona pomóc w prowadzeniu turniejów szachowych oraz 
+Aplikacja stworzona z myślą o turniejach szachowych. Ma ona pomóc w prowadzeniu turniejów szachowych.
 
 ### Głownymi funkcjonalnościami będą:
 * Możliwość tworzenia turniejów

@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,6 +19,7 @@ SOURCES += \
     modifyplayerdialog.cpp \
     player.cpp \
     playerbase.cpp \
+    tabwidgetroundrobin.cpp \
     tournamentinfo.cpp
 
 HEADERS += \
@@ -31,6 +32,7 @@ HEADERS += \
     modifyplayerdialog.h \
     player.h \
     playerbase.h \
+    tabwidgetroundrobin.h \
     tournamentinfo.h
 
 FORMS += \
@@ -38,7 +40,8 @@ FORMS += \
     editinfoaboutdialog.ui \
     galleryphotoviewer.ui \
     mainwindow.ui \
-    modifyplayerdialog.ui
+    modifyplayerdialog.ui \
+    tabwidgetroundrobin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

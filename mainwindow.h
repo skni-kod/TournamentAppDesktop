@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "gallery.h"
+#include <tabwidgetroundrobin.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -70,5 +71,6 @@ private:
     bool wereChangesMade = false; //changes value to true if data modifications took place (player added, edited, removed etc.)
     Ui::MainWindow *ui;
     void updateTableWidget();   //updates the table widget with players
+    QTabWidget *roundrobin;
 };
 #endif // MAINWINDOW_H

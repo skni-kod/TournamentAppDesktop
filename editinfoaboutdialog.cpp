@@ -2,6 +2,7 @@
 #include "ui_editinfoaboutdialog.h"
 #include "tournamentinfo.h"
 #include "QDebug"
+#include "QMessageBox"
 
 EditInfoAboutDialog::EditInfoAboutDialog(QWidget *parent) :
     QDialog(parent),
@@ -24,6 +25,7 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
 {
     TournamentInfo tmpTournament;
     bool isDataIncorrect = false;
+    QString message = "";
 
     // Reading text from edit fields
     tmpTournament.setTournamentAddress(ui->addressTextEdit->toPlainText());
@@ -43,9 +45,40 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
     qDebug() << tmpTournament.getDrawPointsAssignment();
     tmpTournament.setByePointsAssignment(ui->byePointsAssignmentSpinBox->value());
     qDebug() << tmpTournament.getByePointsAssignment();
+    tmpTournament.setPairingSystem(ui->roundRobinRadioButton->isChecked(), ui->radioButton_2->isChecked());
+
+    if(tmpTournament.getTournamentAddress().length() == 0){
+        message += "Address is required\n";
+        isDataIncorrect = true;
+    }
+
+    if(tmpTournament.getWinPointsAssignment() == 0){
+        message += "Win points are required\n";
+        isDataIncorrect = true;
+    }
+
+    if(tmpTournament.getPairingSystem() == "Unknown"){
+        message += "Pairing System is required\n";
+        isDataIncorrect = true;
+    }
+
+    if(ui->maxCategoryComboBox->currentIndex() > ui->minCategoryComboBox->currentIndex()){ // cose the indexes are the other way around than category
+        message += "Choose good Category range";
+        isDataIncorrect = true;
+    }
+
+    if(isDataIncorrect)
+    {
+        QMessageBox messageBox1 (QMessageBox::Warning, "Incorrect data", message);
+        messageBox1.exec();
+    }
+
+    if(!isDataIncorrect)
+    {
+        qDebug() << "TODO: ADD file save!!!!";
+        accept();
+    }
 
     // TODO:
-    //      Pairing system set.
     //      Adding to file
-    //      Adding validation
 }
