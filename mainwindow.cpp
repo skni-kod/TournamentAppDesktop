@@ -7,6 +7,7 @@
 #include "playerbase.h"
 #include "QMessageBox"
 #include "QDebug"
+#include "gallerythumbnail.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -39,6 +40,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     //updating the tableWidget
     this->updateTableWidget();
+
+    //rendering the gallery scene ("Photos" tab)
+    gallery1.load();
+    ui->graphicsView->setScene(gallery1.getScene());
+    gallery1.arrangeThumbnails();
 }
 
 MainWindow::~MainWindow()
