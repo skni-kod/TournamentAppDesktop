@@ -6,8 +6,8 @@ TabWidgetRoundRobin::TabWidgetRoundRobin(QWidget *parent) :
     ui(new Ui::TabWidgetRoundRobin)
 {
     ui->setupUi(this);
-    geneSQL();
-    fillingTable();
+    geneSQL();//generuj tablice
+    fillingTable();//wypelnji tablice
 }
 
 TabWidgetRoundRobin::~TabWidgetRoundRobin()
@@ -66,8 +66,8 @@ void TabWidgetRoundRobin::fillingTable()
     int Numbersofplayers=10;
 
 
-    ;
-    if(db.isOpen())
+
+    if(db.isOpen()){
         for(int i=0,id=1;i<(Numbersofplayers-1);i++,id=id+(Numbersofplayers/2)){
 
             tableView.push_back(new QTableView(this));
@@ -86,19 +86,19 @@ void TabWidgetRoundRobin::fillingTable()
             this->addTab(tableView[i],QString::number(i));
 
         }
-    tableView.push_back(new QTableView(this));
-    sqlModelToTable.push_back(new QSqlQueryModel(this));
-    QSqlQuery query;
-    query.prepare("SELECT `graczjeden`,`graczdwa`,COUNT(`wynik`) FROM `tabela` GROUP BY `graczjeden` ORDER BY `COUNT(``wynik``)` DESC ");
-    query.exec();
-    sqlModelToTable.last()->setQuery(query);
-    tableView.last()->setModel(sqlModelToTable.last());
-    this->addTab(tableView.last(),"Podsumowanie");
-    sqlModelToTable.last()->setHeaderData(0, Qt::Horizontal, QObject::tr("Gracz nr.1"));
-    sqlModelToTable.last()->setHeaderData(1, Qt::Horizontal, QObject::tr("Gracz nr.2"));
-    sqlModelToTable.last()->setHeaderData(2, Qt::Horizontal, QObject::tr("Wynik"));
+        tableView.push_back(new QTableView(this));
+        sqlModelToTable.push_back(new QSqlQueryModel(this));
+        QSqlQuery query;
+        query.prepare("SELECT `graczjeden`,`graczdwa`,COUNT(`wynik`) FROM `tabela` GROUP BY `graczjeden` ORDER BY `COUNT(``wynik``)` DESC ");
+        query.exec();
+        sqlModelToTable.last()->setQuery(query);
+        tableView.last()->setModel(sqlModelToTable.last());
+        this->addTab(tableView.last(),"Podsumowanie");
+        sqlModelToTable.last()->setHeaderData(0, Qt::Horizontal, QObject::tr("Gracz nr.1"));
+        sqlModelToTable.last()->setHeaderData(1, Qt::Horizontal, QObject::tr("Gracz nr.2"));
+        sqlModelToTable.last()->setHeaderData(2, Qt::Horizontal, QObject::tr("Wynik"));
 
-
+    }
 
 
 

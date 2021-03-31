@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <tabwidgetroundrobin.h>
-#include <tournamentview.h>
+#include "gamescore/roundrobin/tabwidgetroundrobin.h"
+#include "gamescore/tournament/tournamentview.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

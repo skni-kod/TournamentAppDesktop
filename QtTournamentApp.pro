@@ -10,33 +10,56 @@ CONFIG += c++11
 
 SOURCES += \
     addplayerdialog.cpp \
-    edgetotournamentv.cpp \
+#    dialogtournamentview.cpp \
+#    edgetotournamentv.cpp \
     editinfoaboutdialog.cpp \
+#    gamescore/roundrobin/tabwidgetroundrobin.cpp \
+#    gamescore/tournament/edgetotournamentv.cpp \
+#    gamescore/tournament/editevent/dialogtournamentview.cpp \
+#    gamescore/tournament/reacttotournamentv.cpp \
+#    gamescore/tournament/tournamentview.cpp \
+    gamescore/roundrobin/tabwidgetroundrobin.cpp \
+    gamescore/tournament/edgetotournamentv.cpp \
+    gamescore/tournament/editevent/dialogtournamentview.cpp \
+    gamescore/tournament/reacttotournamentv.cpp \
+    gamescore/tournament/tournamentview.cpp \
     main.cpp \
     mainwindow.cpp \
     modifyplayerdialog.cpp \
     player.cpp \
     playerbase.cpp \
-    reacttotournamentv.cpp \
-    tabwidgetroundrobin.cpp \
+#    reacttotournamentv.cpp \
+#    tabwidgetroundrobin.cpp \
     tournamentinfo.cpp \
-    tournamentview.cpp
+#    tournamentview.cpp
 
 HEADERS += \
     addplayerdialog.h \
-    edgetotournamentv.h \
+#    dialogtournamentview.h \
+#    edgetotournamentv.h \
     editinfoaboutdialog.h \
+#    gamescore/roundrobin/tabwidgetroundrobin.h \
+#    gamescore/tournament/edgetotournamentv.h \
+#    gamescore/tournament/editevent/dialogtournamentview.h \
+#    gamescore/tournament/reacttotournamentv.h \
+#    gamescore/tournament/tournamentview.h \
+    gamescore/roundrobin/tabwidgetroundrobin.h \
+    gamescore/tournament/edgetotournamentv.h \
+    gamescore/tournament/editevent/dialogtournamentview.h \
+    gamescore/tournament/reacttotournamentv.h \
+    gamescore/tournament/tournamentview.h \
     mainwindow.h \
     modifyplayerdialog.h \
     player.h \
     playerbase.h \
-    reacttotournamentv.h \
-    tabwidgetroundrobin.h \
+#    reacttotournamentv.h \
+#    tabwidgetroundrobin.h \
     tournamentinfo.h \
-    tournamentview.h
+#    tournamentview.h
 
 FORMS += \
     addplayerdialog.ui \
+    dialogtournamentview.ui \
     editinfoaboutdialog.ui \
     mainwindow.ui \
     modifyplayerdialog.ui \

@@ -26,7 +26,7 @@ public:
 
 
 private:
-    int Numbersofplayers=6;
+    int Numberofplayers=6;
     Ui::TabWidgetRoundRobin *ui;
     QVector<QTableView> listOfPages;
     void geneSQL();//temp

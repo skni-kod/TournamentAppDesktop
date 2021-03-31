@@ -50,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->verticalLayout->addWidget(roundrobin);
     ui->horizontalLayout_16->addWidget((tournament));
     ui->stackedWidget_2->setCurrentIndex(1);
+    //will be error cuz widgets conne,in the future we will connect only once after logging in
 }
 
 MainWindow::~MainWindow()

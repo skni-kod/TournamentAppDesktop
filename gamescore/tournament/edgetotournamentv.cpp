@@ -4,6 +4,7 @@
 
 #include <QPainter>
 #include <QtMath>
+#include <QDebug>
 
 
 EdgeToTournamentV::EdgeToTournamentV(ReactToTournamentV *SourceReactToTournamentV, ReactToTournamentV *TargetReactToTournamentV)
@@ -11,21 +12,22 @@ EdgeToTournamentV::EdgeToTournamentV(ReactToTournamentV *SourceReactToTournament
 {
     source->addEdge(this);
     target->addEdge(this);
-    adjust();
+calcTheLength();
 }
 
-void EdgeToTournamentV::adjust()
+void EdgeToTournamentV::calcTheLength()
 {
 
-    QLineF line(mapFromItem(source, 70, 40), mapFromItem(target, 10, 40));
+    QLineF line(mapFromItem(source, 10, 40), mapFromItem(target, 70, 40));
     qreal length = line.length();
 
-    prepareGeometryChange();
+
 
 
     QPointF EdgeToTournamentVOffset((line.dx() * 10) / length, (line.dy() * 10) / length);
     sourcePoint = line.p1() + EdgeToTournamentVOffset;
     destPoint = line.p2() - EdgeToTournamentVOffset;
+    //qDebug()<<length<<line.p1()<<line.p2()<<EdgeToTournamentVOffset<<(line.dx() * 10) / length<< (line.dy() * 10) / length<<line.dx()<<line.dy()<<sourcePoint;
 
 }
 
