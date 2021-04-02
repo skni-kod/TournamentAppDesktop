@@ -102,7 +102,8 @@ void TournamentInfo::setByePointsAssignment(float points)
 
 void TournamentInfo::setPairingSystem(bool roundRubin, bool other)
 {
-    if(roundRubin) pairingSystem = "Round Rubin";
-    if(other) pairingSystem  = "Other system";
+    pairingSystem = str;
+    if(roundRubin) pairingSystem  = "RoundRobin";
+    else if(other) pairingSystem  = "OtherSystem";
     else pairingSystem = "Unknown";
 }

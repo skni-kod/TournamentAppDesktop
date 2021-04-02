@@ -46,12 +46,10 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
     tmpTournament.setByePointsAssignment(ui->byePointsAssignmentSpinBox->value());
     qDebug() << tmpTournament.getByePointsAssignment();
     tmpTournament.setPairingSystem(ui->roundRobinRadioButton->isChecked(), ui->radioButton_2->isChecked());
-
     if(tmpTournament.getTournamentAddress().length() == 0){
         message += "Address is required\n";
         isDataIncorrect = true;
     }
-
     if(tmpTournament.getWinPointsAssignment() == 0){
         message += "Win points are required\n";
         isDataIncorrect = true;
@@ -75,10 +73,6 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
 
     if(!isDataIncorrect)
     {
-        qDebug() << "TODO: ADD file save!!!!";
         accept();
     }
-
-    // TODO:
-    //      Adding to file
 }
