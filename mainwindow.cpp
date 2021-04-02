@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    MainWindow::setWindowTitle("Tournament App");
     ui->playersButton_0->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
     ui->photosButton_1->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
     ui->gameScoreButton_2->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
