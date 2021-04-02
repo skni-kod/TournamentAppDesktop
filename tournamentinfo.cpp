@@ -103,4 +103,7 @@ void TournamentInfo::setByePointsAssignment(float points)
 void TournamentInfo::setPairingSystem(QString str)
 {
     pairingSystem = str;
+    if(roundRubin) pairingSystem  = "RoundRobin";
+    else if(other) pairingSystem  = "OtherSystem";
+    else pairingSystem = "Unknown";
 }
