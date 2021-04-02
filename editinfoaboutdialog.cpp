@@ -9,6 +9,7 @@ EditInfoAboutDialog::EditInfoAboutDialog(QWidget *parent) :
     ui(new Ui::EditInfoAboutDialog)
 {
     ui->setupUi(this);
+    EditInfoAboutDialog::setWindowTitle("Tournament Info");
 }
 
 EditInfoAboutDialog::~EditInfoAboutDialog()
