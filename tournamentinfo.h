@@ -37,7 +37,7 @@ public:
     void setLosePointsAssignment(float points);
     void setDrawPointsAssignment(float points);
     void setByePointsAssignment(float points);
-    void setPairingSystem(QString str);
+    void setPairingSystem(bool roundRubin, bool other);
 };
 
 #endif // TOURNAMENTINFO_H

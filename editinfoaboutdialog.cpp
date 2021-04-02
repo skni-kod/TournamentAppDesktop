@@ -2,6 +2,7 @@
 #include "ui_editinfoaboutdialog.h"
 #include "tournamentinfo.h"
 #include "QDebug"
+#include "QMessageBox"
 
 EditInfoAboutDialog::EditInfoAboutDialog(QWidget *parent) :
     QDialog(parent),
@@ -24,6 +25,7 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
 {
     TournamentInfo tmpTournament;
     bool isDataIncorrect = false;
+    QString message = "";
 
     // Reading text from edit fields
     tmpTournament.setTournamentAddress(ui->addressTextEdit->toPlainText());
@@ -44,12 +46,10 @@ void EditInfoAboutDialog::on_saveSettingsButton_clicked()
     tmpTournament.setByePointsAssignment(ui->byePointsAssignmentSpinBox->value());
     qDebug() << tmpTournament.getByePointsAssignment();
     tmpTournament.setPairingSystem(ui->roundRobinRadioButton->isChecked(), ui->radioButton_2->isChecked());
-    qDebug() << ui->roundRobinRadioButton->isChecked();
     if(tmpTournament.getTournamentAddress().length() == 0){
         message += "Address is required\n";
         isDataIncorrect = true;
     }
-
     if(tmpTournament.getWinPointsAssignment() == 0){
         message += "Win points are required\n";
         isDataIncorrect = true;

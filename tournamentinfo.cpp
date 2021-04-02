@@ -100,7 +100,7 @@ void TournamentInfo::setByePointsAssignment(float points)
     byePointsAssignment = points;
 }
 
-void TournamentInfo::setPairingSystem(QString str)
+void TournamentInfo::setPairingSystem(bool roundRubin, bool other)
 {
     pairingSystem = str;
     if(roundRubin) pairingSystem  = "RoundRobin";
