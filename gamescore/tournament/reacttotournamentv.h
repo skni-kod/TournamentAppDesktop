@@ -15,12 +15,16 @@ class ReactToTournamentV : public  QGraphicsObject
 public:
     ReactToTournamentV(TournamentView *graphWidget);
     void addEdge(EdgeToTournamentV *edge);
-    QList<EdgeToTournamentV *> edges() const;
-    void changeStatus(bool player);
-    int getId();
-    void setPlayers(QString player1,QString player2);
+    void changeStatus(bool player);//przekresl zawodnika[0-1 gracz,1-2 gracz]
+    int getId();//id kwadratu
+    int getIdSql();//id w tabeli
+    int getWin();//kto wygral
+    QString getPlayer1();
+    QString getPlayer2();
+    void setPlayers(QString player1,QString player2);//ustaw imiona zawodnikow
     void setId(int id);
-    int getIdSql();
+    void setWin(int win);
+    void setInfo(QString info);//ustaw info na temat wydarzen
 protected:
     void hoverEnterEvent(QGraphicsSceneHoverEvent* event) override;
     void hoverLeaveEvent(QGraphicsSceneHoverEvent* event) override;
@@ -31,12 +35,13 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event)override;
 
 
-    void fillInfoEvent(QList<QString> info);
+
 
 signals:
     void clicked(int);
 
 private:
+     int win=0;
     int idSQL=-1;
     int id=0;
     std::unique_ptr<QGraphicsTextItem>coordinateText;
@@ -45,7 +50,9 @@ private:
     QPointF newPos;
     TournamentView *graph;
     QList <QFont*> players={};
-    QList <QString> infoAboutEvent={};
+    QList <QFont*> playersOrignal={};
+    QString infoAboutEvent={};
+     QList<EdgeToTournamentV *> edges() const;
 
 };
 #endif

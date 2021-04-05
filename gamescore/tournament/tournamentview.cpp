@@ -43,21 +43,36 @@ TournamentView::TournamentView(QWidget *parent)
         }
     }
     for(int i=1;i<3;i++)
-        if(i<react.size()) scene->addItem(new EdgeToTournamentV(react.at(0),react.at(i)));
+        if(i<react.size()){
+            edge.push_back(new EdgeToTournamentV(react.at(0),react.at(i)));
+            scene->addItem(edge.last());
+        }
 
     for(int i=0,step=2,step_2=4;i<logNumber-2;i++,step*=2,step_2*=2)
         for(int j=1,temp=step,temp_2=step_2;j<step;j+=2,temp+=2,temp_2+=4){
             if(temp_2<react.size())
-                scene->addItem(new EdgeToTournamentV(react.at(temp),react.at(temp_2)));
+            {edge.push_back(new EdgeToTournamentV(react.at(temp),react.at(temp_2)));
+                scene->addItem(edge.last());
+
+            }
             if(temp_2+2<react.size())
-                scene->addItem(new EdgeToTournamentV(react.at(temp),react.at(temp_2+2)));
+            {
+                edge.push_back(new EdgeToTournamentV(react.at(temp),react.at(temp_2+2)));
+                scene->addItem(edge.last());
+            }
         }
     for(int i=0,step=2,step_2=4;i<logNumber-2;i++,step*=2,step_2*=2)
         for(int j=1,temp=step-1,temp_2=step_2-1;j<step;j+=2,temp+=2,temp_2+=4){
             if(temp_2<react.size())
-                scene->addItem(new EdgeToTournamentV(react.at(temp),react.at(temp_2)));
+            {edge.push_back(new EdgeToTournamentV(react.at(temp),react.at(temp_2)));
+                scene->addItem(edge.last());
+
+            }
             if(temp_2+2<react.size())
-                scene->addItem(new EdgeToTournamentV(react.at(temp),react.at(temp_2+2)));
+            {
+                edge.push_back(new EdgeToTournamentV(react.at(temp),react.at(temp_2+2)));
+                scene->addItem(edge.last());
+            }
         }
 
 
@@ -73,7 +88,7 @@ TournamentView::TournamentView(QWidget *parent)
     if(db.open()){
 
         QSqlQuery query(db);
-        query.prepare("CREATE TABLE IF NOT EXISTS "+idTurn+" (id int not null primary key, graczjeden text,graczdwa text,wynik text)");
+        query.prepare("CREATE TABLE IF NOT EXISTS "+idTurn+" (id int not null primary key, graczjeden text,graczdwa text,wynik text,info text)");
         query.exec();
         QList <QString> Players={"Witek","Adam","Mati","Czeslaw","Ewa","Maciek","Madzia","Tymek","lop"};//temporary use of the list
 
@@ -147,8 +162,9 @@ void TournamentView::drawBackground(QPainter *painter, const QRectF &rect)
 void TournamentView::ShowContextMenu(QPoint pos)
 {
     QPoint globalPos = this->mapToGlobal(pos);
+    // QList<EdgeToTournamentV *> tempListEdge;
 
-    qDebug()<<IdManaged;
+
     QMenu myMenu;
     myMenu.addAction("Edytuj event");
     QAction* selectedItem = myMenu.exec(globalPos);
@@ -156,6 +172,11 @@ void TournamentView::ShowContextMenu(QPoint pos)
     {
         dialogedit->setDb(&db,IdManaged);
         dialogedit->show();
+        //        foreach(EdgeToTournamentV * temp,edge){
+        //            if(temp->getTarget()->getId()==IdManaged)
+        //                if(temp->getTarget()->getWin())temp->getSource()->setPlayers()
+        //        }
+
     }
     else
     {
@@ -174,11 +195,18 @@ void TournamentView::fillTheLeader()
         {
             QString player1 = query.value("graczjeden").toString();
             QString player2 = query.value("graczdwa").toString();
+            int wynik=query.value("wynik").toInt();
+            QString info=query.value("info").toString();
+
 
             react.at(--iter)->setPlayers(player1,player2);
             react.at(iter)->setId(i++);
+            react.at(iter)->setWin(wynik);
+            react.at(iter)->setInfo({info});
+            // qDebug()<<react.at(iter)->getWin();
         }
     }
+
     update();
 }
 

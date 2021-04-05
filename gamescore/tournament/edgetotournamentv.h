@@ -11,7 +11,9 @@ class EdgeToTournamentV : public QGraphicsObject
     Q_OBJECT
 public:
     EdgeToTournamentV(ReactToTournamentV *SourceReactToTournamentV, ReactToTournamentV *TargetReactToTournamentV);
-    void calcTheLength();
+    void calcTheLength();//oblicz linie
+    ReactToTournamentV *getSource();//zwroc zrodlo lini
+    ReactToTournamentV* getTarget();//zwroc cel lini
 protected:
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;

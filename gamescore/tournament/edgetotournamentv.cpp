@@ -12,7 +12,7 @@ EdgeToTournamentV::EdgeToTournamentV(ReactToTournamentV *SourceReactToTournament
 {
     source->addEdge(this);
     target->addEdge(this);
-calcTheLength();
+    calcTheLength();
 }
 
 void EdgeToTournamentV::calcTheLength()
@@ -20,15 +20,19 @@ void EdgeToTournamentV::calcTheLength()
 
     QLineF line(mapFromItem(source, 10, 40), mapFromItem(target, 70, 40));
     qreal length = line.length();
-
-
-
-
     QPointF EdgeToTournamentVOffset((line.dx() * 10) / length, (line.dy() * 10) / length);
     sourcePoint = line.p1() + EdgeToTournamentVOffset;
     destPoint = line.p2() - EdgeToTournamentVOffset;
-    //qDebug()<<length<<line.p1()<<line.p2()<<EdgeToTournamentVOffset<<(line.dx() * 10) / length<< (line.dy() * 10) / length<<line.dx()<<line.dy()<<sourcePoint;
+}
 
+ReactToTournamentV *EdgeToTournamentV::getSource()
+{
+    return  source;
+}
+
+ReactToTournamentV *EdgeToTournamentV::getTarget()
+{
+    return target;
 }
 
 QRectF EdgeToTournamentV::boundingRect() const

@@ -26,8 +26,10 @@ protected:
 private:
     QSqlDatabase db;
     QVector <ReactToTournamentV *> react;
+    QVector <EdgeToTournamentV *> edge;
     DialogTournamentView * dialogedit;
     int IdManaged=-1;;
+
 
 private slots:
     void ShowContextMenu(QPoint);
@@ -40,7 +42,7 @@ private slots:
 #endif
 /*TO DO
  * ai
- * correct editing of an event
+ *
  * fix the scene
  *
 */

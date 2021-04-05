@@ -9,7 +9,7 @@
 #include <QStyleOption>
 #include <qdebug.h>
 
-
+enum Status{NOGAME=0,WIN_PLAYER2=2,WIN_PLAYER1=1,DRAW=3};
 ReactToTournamentV::ReactToTournamentV(TournamentView *graphWidget)
     : graph(graphWidget)
 {
@@ -20,7 +20,7 @@ ReactToTournamentV::ReactToTournamentV(TournamentView *graphWidget)
     players.push_back(new QFont("Pierwszy", 12));
     players.push_back(new QFont("Drugi", 12));
     setAcceptHoverEvents(true);
-    mainText->setPlainText(players[0]->family()+"\nvs\n"+players[1]->family());
+    mainText->setHtml(players[0]->family()+"<p>vs<p>"+players[1]->family());
     mainText->setPos(25,0);
     id=typid++;
 }
@@ -40,7 +40,10 @@ QList<EdgeToTournamentV *> ReactToTournamentV::edges() const
 
 void ReactToTournamentV::changeStatus(bool player)
 {
-    players[player]->setStrikeOut(1);
+
+    players[player]->setFamily("<s>"+players[player]->family()+"</s>");
+    mainText->setHtml(players[0]->family()+"<p>vs<p>"+players[1]->family());
+
 }
 
 int ReactToTournamentV::getId()
@@ -74,11 +77,9 @@ void ReactToTournamentV::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if(event->button() == Qt::RightButton)
     {
-        //QPoint temp=event->pos().toPoint();
         emit clicked(idSQL);
     }
-    //
-    //   pContextMenu->exec( event->globalPos() );
+
 
 
 }
@@ -88,7 +89,7 @@ void ReactToTournamentV::hoverEnterEvent(QGraphicsSceneHoverEvent * event)
 {
     if (!coordinateText) {
         coordinateText= std::unique_ptr<QGraphicsTextItem>(new QGraphicsTextItem(this));
-        coordinateText->setPlainText("Info about\nevent");
+        coordinateText->setPlainText(infoAboutEvent);
         coordinateText->setPos(2,2);
     }
     mainText->setVisible(false);
@@ -114,8 +115,8 @@ void ReactToTournamentV::setPlayers(QString player1, QString player2)
 
     players[0]->setFamily(player1);
     players[1]->setFamily(player2);
-    mainText->setPlainText(players[0]->family()+"\nvs\n"+players[1]->family());
-    changeStatus(0);
+    playersOrignal=players;
+    mainText->setHtml(players[0]->family()+"<p>vs<p>"+players[1]->family());
     update();
 }
 
@@ -129,7 +130,36 @@ int ReactToTournamentV::getIdSql()
     return idSQL;
 }
 
-void ReactToTournamentV::fillInfoEvent(QList<QString> info)
+int ReactToTournamentV::getWin()
+{
+    return win;
+}
+
+QString ReactToTournamentV::getPlayer1()
+{
+    return players[0]->family();
+}
+
+QString ReactToTournamentV::getPlayer2()
+{
+    return players[1]->family();
+}
+
+void ReactToTournamentV::setWin(int win)
+{
+
+    if(win>NOGAME&&win<DRAW){
+
+        this->win=win;
+        this->changeStatus(win-1);
+    }
+    else{
+        players=playersOrignal;
+    }
+}
+
+
+void ReactToTournamentV::setInfo(QString info)
 {
     infoAboutEvent=info;
     update();
