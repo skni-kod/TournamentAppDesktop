@@ -27,37 +27,13 @@ private slots:
 
     void on_restoreButton_clicked();
 
-    void on_playersButton_0_clicked();
+    void on_playersButton_clicked();
 
-    void on_playersButton_1_clicked();
+    void on_photosButton_clicked();
 
-    void on_playersButton_2_clicked();
+    void on_gameScoreButton_clicked();
 
-    void on_playersButton_3_clicked();
-
-    void on_photosButton_0_clicked();
-
-    void on_photosButton_1_clicked();
-
-    void on_photosButton_2_clicked();
-
-    void on_photosButton_3_clicked();
-
-    void on_gameScoreButton_0_clicked();
-
-    void on_gameScoreButton_1_clicked();
-
-    void on_gameScoreButton_2_clicked();
-
-    void on_gameScoreButton_3_clicked();
-
-    void on_tournamentInfoButton_0_clicked();
-
-    void on_tournamentInfoButton_1_clicked();
-
-    void on_tournamentInfoButton_2_clicked();
-
-    void on_tournamentInfoButton_3_clicked();
+    void on_tournamentInfoButton_clicked();
 
     void on_editInfoAboutTButton_clicked();
 
