@@ -15,10 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->playersButton_0->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
-    ui->photosButton_1->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
-    ui->gameScoreButton_2->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
-    ui->tournamentInfoButton_3->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
+    ui->playersButton->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
+    ui->photosButton->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
+    ui->gameScoreButton->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
+    ui->tournamentInfoButton->setStyleSheet("background-color: rgb(46, 46, 46); color: rgb(255,255,255);");
     //block resize
     this->statusBar()->setSizeGripEnabled(false);
     setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
@@ -175,81 +175,22 @@ void MainWindow::on_editInfoAboutTButton_clicked()
 
 
 //these functions handle movement between pages in the UI (there are 4 pages, each contain 4 button ("Player", "Game Score", "Tournament Info", "Photos"))
-void MainWindow::on_playersButton_0_clicked()
+void MainWindow::on_playersButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_playersButton_1_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::on_playersButton_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::on_playersButton_3_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-void MainWindow::on_photosButton_0_clicked()
+void MainWindow::on_photosButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_photosButton_1_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::on_photosButton_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::on_photosButton_3_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::on_gameScoreButton_0_clicked()
+void MainWindow::on_gameScoreButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-void MainWindow::on_gameScoreButton_1_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(2);
-}
-
-void MainWindow::on_gameScoreButton_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(2);
-}
-
-void MainWindow::on_gameScoreButton_3_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(2);
-}
-
-void MainWindow::on_tournamentInfoButton_0_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
-}
-
-void MainWindow::on_tournamentInfoButton_1_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
-}
-
-void MainWindow::on_tournamentInfoButton_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
-}
-
-void MainWindow::on_tournamentInfoButton_3_clicked()
+void MainWindow::on_tournamentInfoButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
