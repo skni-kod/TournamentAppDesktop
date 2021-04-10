@@ -24,6 +24,7 @@ public:
     void setPlayers(QString player1,QString player2);//ustaw imiona zawodnikow
     void setId(int id);
     void setWin(int win);
+    QString getWinner();
     void setInfo(QString info);//ustaw info na temat wydarzen
 protected:
     void hoverEnterEvent(QGraphicsSceneHoverEvent* event) override;
@@ -50,7 +51,7 @@ private:
     QPointF newPos;
     TournamentView *graph;
     QList <QFont*> players={};
-    QList <QFont*> playersOrignal={};
+    QList <QString> playersOrignal;
     QString infoAboutEvent={};
      QList<EdgeToTournamentV *> edges() const;
 

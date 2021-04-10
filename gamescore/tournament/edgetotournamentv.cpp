@@ -6,7 +6,12 @@
 #include <QtMath>
 #include <QDebug>
 
-
+/*!
+ * \brief EdgeToTournamentV::EdgeToTournamentV
+ * Konstruktor
+ * \param SourceReactToTournamentV Źródło naszej krawędzi.
+ * \param TargetReactToTournamentV Cel naszej krawędzi
+ */
 EdgeToTournamentV::EdgeToTournamentV(ReactToTournamentV *SourceReactToTournamentV, ReactToTournamentV *TargetReactToTournamentV)
     : source(SourceReactToTournamentV), target(TargetReactToTournamentV)
 {
@@ -14,7 +19,10 @@ EdgeToTournamentV::EdgeToTournamentV(ReactToTournamentV *SourceReactToTournament
     target->addEdge(this);
     calcTheLength();
 }
-
+/*!
+ * \brief EdgeToTournamentV::calcTheLength
+ * Liczenie długości lini
+ */
 void EdgeToTournamentV::calcTheLength()
 {
 
@@ -24,24 +32,37 @@ void EdgeToTournamentV::calcTheLength()
     sourcePoint = line.p1() + EdgeToTournamentVOffset;
     destPoint = line.p2() - EdgeToTournamentVOffset;
 }
-
+/*!
+ * \brief EdgeToTournamentV::getSource
+ * \return Źródło
+ */
 ReactToTournamentV *EdgeToTournamentV::getSource()
 {
     return  source;
 }
-
+/*!
+ * \brief EdgeToTournamentV::getTarget
+ * \return Cel
+ */
 ReactToTournamentV *EdgeToTournamentV::getTarget()
 {
     return target;
 }
-
+/*!
+ * \brief EdgeToTournamentV::boundingRect
+ * \return
+ */
 QRectF EdgeToTournamentV::boundingRect() const
 {
 
     return QRectF(sourcePoint, QSizeF(destPoint.x() - sourcePoint.x(),
                                       destPoint.y() - sourcePoint.y()));
 }
-
+/*!
+ * \brief EdgeToTournamentV::paint
+ * Narysuj linie
+ * \param painter
+ */
 void EdgeToTournamentV::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 

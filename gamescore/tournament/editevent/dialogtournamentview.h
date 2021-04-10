@@ -20,6 +20,7 @@ public:
     ~DialogTournamentView();
     void setDb(QSqlDatabase *temp,int id);//ustaw baze danych i zaladuj dane z bazy
 
+
 signals:
     void clicked();//gdy przycisk zatwierdz
 

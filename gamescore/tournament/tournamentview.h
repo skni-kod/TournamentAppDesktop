@@ -34,15 +34,14 @@ private:
 private slots:
     void ShowContextMenu(QPoint);
     void fillTheLeader();
-private slots:
-    void refresh();
+    void adjustSQl();
 };
 
 
 #endif
 /*TO DO
- * ai
- *
+ * create a real constructor(remove tournament generator for sql,add id tabel as const private varia,change all QSqlQuery)
+ * comments
  * fix the scene
- *
+ * more detailed editing about the event
 */
